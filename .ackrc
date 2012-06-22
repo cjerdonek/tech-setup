@@ -1,5 +1,9 @@
 # Put this file in your home directory (with name .ackrc) to configure ack:
 #   http://betterthangrep.com/
+#
+# Ignore the directory created by tox: http://pypi.python.org/pypi/tox
+--ignore-dir=.tox
+#
 --type-set=json=.json
 --type-set=markdown=.md
 --type-set=mustache=.mustache
