@@ -8,4 +8,5 @@
 --type-set=json=.json
 --type-set=markdown=.md
 --type-set=mustache=.mustache
+--type-set=rest=.rst
 --type-set=yaml=.yaml,.yml
