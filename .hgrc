@@ -1,3 +1,8 @@
 [ui]
 username = Chris Jerdonek <chris.jerdonek@gmail.com>
 editor = nano
+[diff]
+# `hg diff --git` works a bit better than the default because, for example,
+# empty files aren't recognized otherwise.  See, for example --
+#   http://www.selenic.com/pipermail/mercurial/2010-March/030882.html
+git = true
