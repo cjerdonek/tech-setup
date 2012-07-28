@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# Usage: branch-python <branch-name>
+#
+# Script to create a new Python branch.
+#
+# Also builds Python and makes the Docs.
+#
+# This script assumes it is run from the following directory structure:
+#
+# <cwd>
+#     cpython/
+#     branches/
+
+cd cpython
+hg pull
+hg update
+cd ..
+hg clone cpython/ branches/$1
+cd branches/$1
+mate .
+./configure --with-pydebug && make -j2
+cd Doc
+make html
+open build/html/index.html
+cd ..
