@@ -9,14 +9,14 @@
 # This script assumes it is run from the following directory structure:
 #
 # <cwd>
-#     cpython/
+#     main/
 #     branches/
 
-cd cpython
+cd main
 hg pull
 hg update
 cd ..
-hg clone cpython/ branches/$1
+hg clone main/ branches/$1
 cd branches/$1
 touch NOTES.txt
 mate .
