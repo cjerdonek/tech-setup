@@ -1,10 +1,10 @@
 #!/bin/bash
 
-# Usage: new-python <branch-name>
+# Usage: new-devguide <branch-name>
 #
-# Script to create a new Python branch.
+# Script to create a new branch of the Python Developer's Guide.
 #
-# Also builds Python and makes the Docs.
+# Also makes the Docs.
 #
 # This script assumes it is run from the following directory structure:
 #
@@ -19,9 +19,5 @@ cd ..
 hg clone main/ branches/$1
 cd branches/$1
 touch NOTES.txt
-mate .
-./configure --with-pydebug && make -j2
-cd Doc
 make html
-open build/html/index.html
-cd ..
+open _build/html/index.html
