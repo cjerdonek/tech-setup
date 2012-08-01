@@ -18,6 +18,7 @@ hg update
 cd ..
 hg clone cpython/ branches/$1
 cd branches/$1
+touch NOTES.txt
 mate .
 ./configure --with-pydebug && make -j2
 cd Doc
