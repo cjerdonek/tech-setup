@@ -19,5 +19,6 @@ cd ..
 hg clone main/ branches/$1
 cd branches/$1
 touch NOTES.txt
+mate .
 make html
 open _build/html/index.html
