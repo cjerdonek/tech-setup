@@ -12,16 +12,16 @@
 #     main/
 #     branches/
 
-cd main
+pushd main
 hg pull
 hg update
-cd ..
+popd
 hg clone main/ branches/$1
-cd branches/$1
+pushd branches/$1
 touch NOTES.txt
 mate .
 ./configure --with-pydebug && make -j2
-cd Doc
+pushd Doc
 make html
 open build/html/index.html
-cd ..
+popd
