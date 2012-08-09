@@ -1,24 +1,31 @@
 #!/bin/bash
 
-# Usage: new-python <branch-name>
+# Usage: . new-python <branch-name>
 #
 # Script to create a new Python branch.
 #
-# Also builds Python and makes the Docs.
+# Also builds Python and makes the Docs.  Using the dot command allows
+# the directory change to persist so that we end up in the branch.
 #
 # This script assumes it is run from the following directory structure:
 #
 # <cwd>
-#     main/
 #     branches/
+#     issues/
+#         <patches and supplementary files>
+#     main/
+
+# Create supplementary directory.
+mkdir issues/$1
+touch issues/$1/NOTES.txt
 
 pushd main
 hg pull
 hg update
 popd
 hg clone main/ branches/$1
+
 pushd branches/$1
-touch NOTES.txt
 mate .
 ./configure --with-pydebug && make -j2
 pushd Doc
