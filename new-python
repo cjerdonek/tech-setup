@@ -17,7 +17,7 @@
 
 # Create supplementary directory.
 mkdir issues/$1
-touch issues/$1/NOTES.txt
+touch issues/$1/NOTES-$1.txt
 
 pushd main
 hg pull
