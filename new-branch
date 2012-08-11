@@ -1,34 +1,70 @@
 #!/bin/bash
 
-# Usage: . new-python <branch-name>
+# Usage: . new-branch <project-name> <branch-name>
 #
-# Script to create a new Python branch.
+# Script to create a new branch for Python development.
 #
-# Also builds Python and makes the Docs.  Using the dot command allows
-# the directory change to persist so that we end up in the branch.
+# Supported project name values:
+#
+#   cpython (http://hg.python.org/cpython):
+#
+#     Also builds Python and makes the Docs.
+#
+#   devguide (http://hg.python.org/devguide):
+#
+#     Also makes the docs.
+#
+# Using the dot command allows the directory change to persist so that
+# you end up in the branch after running the script.
 #
 # This script assumes it is run from the following directory structure:
 #
 # <cwd>
+#     cpython/
+#         <main hg checkout>
+#     devguide/
+#         <main hg checkout>
 #     branches/
 #     issues/
 #         <patches and supplementary files>
-#     main/
+
+# TODO: turn this into a Python script.
 
 # Create supplementary directory.
-mkdir issues/$1
-touch issues/$1/NOTES-$1.txt
+mkdir issues/$2
+if [ $? -ne 0 ]; then
+    echo "exiting: directory already exists"
+    exit
+fi
+touch issues/$2/NOTES-$2.txt
 
-pushd main
+pushd $1
+if [ $? -ne 0 ]; then
+    echo "exiting: unrecognized project name '$1'"
+    exit
+fi
 hg pull
 hg update
 popd
-hg clone main/ branches/$1
+hg clone $1 branches/$2
 
-pushd branches/$1
+pushd branches/$2
+if [ $? -ne 0 ]; then
+    # To avoid opening the whole cwd next.
+    echo "exiting: failed to enter branch directory"
+    exit
+fi
 mate .
-./configure --with-pydebug && make -j2
-pushd Doc
-make html
-open build/html/index.html
-popd
+
+# Use = for string comparison.
+if [ $1 = "cpython" ]; then
+    ./configure --with-pydebug && make -j2
+    pushd Doc
+    make html
+    open build/html/index.html
+    popd
+fi
+if [ $1 = "devguide" ]; then
+    make html
+    open _build/html/index.html
+fi
