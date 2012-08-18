@@ -28,6 +28,7 @@
 #     issues/
 #         <patches and supplementary files>
 
+# TODO: check that both command-line arguments were provided.
 # TODO: turn this into a Python script.
 
 # Create supplementary directory.
