@@ -6,3 +6,5 @@ editor = nano
 # empty files aren't recognized otherwise.  See, for example --
 #   http://www.selenic.com/pipermail/mercurial/2010-March/030882.html
 git = true
+[extensions]
+share =
