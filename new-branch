@@ -2,7 +2,7 @@
 
 # Usage: . new-branch <project-name> <branch-name>
 #
-# Script to create a new branch for Python development.
+# Script to create a new repository/working directory for Python development.
 #
 # Supported project name values:
 #
@@ -24,7 +24,7 @@
 #         <main hg checkout>
 #     devguide/
 #         <main hg checkout>
-#     branches/
+#     shares/
 #     issues/
 #         <patches and supplementary files>
 
@@ -47,9 +47,9 @@ fi
 hg pull
 hg update
 popd
-hg clone $1 branches/$2
+hg share $1 shares/$2
 
-pushd branches/$2
+pushd shares/$2
 if [ $? -ne 0 ]; then
     # To avoid opening the whole cwd next.
     echo "exiting: failed to enter branch directory"
@@ -62,10 +62,18 @@ if [ $1 = "cpython" ]; then
     ./configure --with-pydebug && make -j2
     pushd Doc
     make html
+    if [ $? -ne 0 ]; then
+        echo "exiting: error making html"
+        exit
+    fi
     open build/html/index.html
     popd
 fi
 if [ $1 = "devguide" ]; then
     make html
+    if [ $? -ne 0 ]; then
+        echo "exiting: error making html"
+        exit
+    fi
     open _build/html/index.html
 fi
