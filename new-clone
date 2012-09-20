@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Usage: . new-branch <project-name> <clone-name>
+# Usage: . new-clone <project-name> <clone-name>
 #
 # Script to create a new clone for Python development.
 #
