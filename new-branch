@@ -1,8 +1,8 @@
 #!/bin/bash
 
-# Usage: . new-branch <project-name> <branch-name>
+# Usage: . new-branch <project-name> <clone-name>
 #
-# Script to create a new repository/working directory for Python development.
+# Script to create a new clone for Python development.
 #
 # Supported project name values:
 #
@@ -15,7 +15,7 @@
 #     Also makes the docs.
 #
 # Using the dot command allows the directory change to persist so that
-# you end up in the branch after running the script.
+# you end up in the clone after running the script.
 #
 # This script assumes it is run from the following directory structure:
 #
@@ -24,7 +24,7 @@
 #         <main hg checkout>
 #     devguide/
 #         <main hg checkout>
-#     shares/
+#     clones/
 #     issues/
 #         <patches and supplementary files>
 
@@ -47,12 +47,12 @@ fi
 hg pull
 hg update
 popd
-hg share $1 shares/$2
+hg clone $1 clones/$2
 
-pushd shares/$2
+pushd clones/$2
 if [ $? -ne 0 ]; then
     # To avoid opening the whole cwd next.
-    echo "exiting: failed to enter branch directory"
+    echo "exiting: failed to enter clone directory"
     exit
 fi
 mate .
