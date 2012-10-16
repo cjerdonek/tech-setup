@@ -1,6 +1,7 @@
 [ui]
 username = Chris Jerdonek <chris.jerdonek@gmail.com>
 editor = nano
+ssh = ssh -C
 [diff]
 # `hg diff --git` works a bit better than the default because, for example,
 # empty files aren't recognized otherwise.  See, for example --
