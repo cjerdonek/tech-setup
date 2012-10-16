@@ -10,3 +10,8 @@
 --type-set=mustache=.mustache
 --type-set=rest=.rst
 --type-set=yaml=.yaml,.yml
+#
+# We leave this comment to illustrate how to ignore a specific file:
+#
+#--invert-file-match
+#--G=searchindex\.js
