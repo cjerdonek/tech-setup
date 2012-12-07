@@ -1,7 +1,7 @@
 Python Setup
 ============
 
-In the system Python you want to use (e.g. Python 3.2)--
+In the system Python you want to use (e.g. Python 2.7)--
 
 Install [distribute](http://packages.python.org/distribute/):
 
@@ -20,7 +20,16 @@ Install pip:
 Install [virtualenv](http://www.virtualenv.org/en/latest/#installation).
 
 Install
-[virtualenvwrapper](http://virtualenvwrapper.readthedocs.org/en/latest/).
+[virtualenvwrapper](http://virtualenvwrapper.readthedocs.org/en/latest/install.html).
 
-TODO: look into whether the above need to be separately installed for
-different system Pythons and MacPorts versions, etc.
+Note: `virtualenvwrapper` works only with Python 2.x and should be installed
+only into the primary Python installation that you will be using (e.g.
+MacPorts or your system Python).
+
+Confirm that lines like the following are in your bash profile (e.g.
+`~/.profile`):
+
+    export WORKON_HOME=$HOME/dev/PYVENVS/.virtualenvs
+    export PROJECT_HOME=$HOME/dev/python
+    source /opt/local/Library/Frameworks/Python.framework/Versions/2.7/bin/virtualenvwrapper.sh
+
