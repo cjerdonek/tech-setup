@@ -17,3 +17,10 @@ Install pip:
 
     $ easy_install pip
 
+Install [virtualenv](http://www.virtualenv.org/en/latest/#installation).
+
+Install
+[virtualenvwrapper](http://virtualenvwrapper.readthedocs.org/en/latest/).
+
+TODO: look into whether the above need to be separately installed for
+different system Pythons and MacPorts versions, etc.
