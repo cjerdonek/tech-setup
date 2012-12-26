@@ -8,4 +8,5 @@ ssh = ssh -C
 #   http://www.selenic.com/pipermail/mercurial/2010-March/030882.html
 git = true
 [extensions]
+mq =
 share =
