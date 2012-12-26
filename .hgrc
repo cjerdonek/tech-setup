@@ -10,3 +10,5 @@ git = true
 [extensions]
 mq =
 share =
+[alias]
+l5 = log -l 5
