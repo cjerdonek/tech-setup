@@ -1,0 +1,32 @@
+#!/bin/bash
+
+# Usage: . new-issue <issue-name>
+#
+# Script to create a new issue for Python development.
+#
+# Supported project name values:
+#
+#   cpython (http://hg.python.org/cpython):
+#
+#     Also builds Python and makes the Docs.
+#
+#   devguide (http://hg.python.org/devguide):
+#
+#     Also makes the docs.
+#
+# Using the dot command allows the directory change to persist so that
+# you end up in the clone after running the script.
+#
+# This script assumes it is run from the following directory structure:
+#
+# <cwd>
+#     issues/
+#         <patches and supplementary files>
+
+# Create supplementary directory.
+mkdir issues/$1
+if [ $? -ne 0 ]; then
+    echo "exiting: directory already exists"
+    exit
+fi
+touch issues/$1/NOTES-$1.txt
