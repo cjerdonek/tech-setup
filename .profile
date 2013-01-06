@@ -17,3 +17,7 @@ settitle() {
 # Git tab completion
 # See: https://github.com/git/git/blob/master/contrib/completion/git-completion.bash
 source ~/.git-completion.sh
+
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
