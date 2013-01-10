@@ -12,3 +12,6 @@ mq =
 share =
 [alias]
 l5 = log -l 5
+# Default diff: allow diff to be run in default mode
+# Also see hg issue #3761: http://bz.selenic.com/show_bug.cgi?id=3761
+ddiff = !$HG --config diff.git=0 diff $@
