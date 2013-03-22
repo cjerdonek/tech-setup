@@ -59,9 +59,7 @@ Here is what `brew doctor` initially gave me:
 
 For `Warning: /usr/local/etc isn't writable`:
 
-    $ sudo chown -R whoami /usr/local
-
-Where `whoami` is the result of running `whoami` at the command-line.
+    $ sudo chown -R `whoami` /usr/local
 
 For this warning:
 
