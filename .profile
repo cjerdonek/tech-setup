@@ -2,6 +2,8 @@
 
 # TODO: fill this out.
 
+export EDITOR=nano
+
 # virtualenvwrapper configuration.  See--
 # http://virtualenvwrapper.readthedocs.org/en/latest/install.html
 export WORKON_HOME=$HOME/dev/PYVENVS/.virtualenvs
