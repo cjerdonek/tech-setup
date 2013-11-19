@@ -15,6 +15,18 @@ export WORKON_HOME=$HOME/Dev/.virtualenvs
 
 source /opt/local/Library/Frameworks/Python.framework/Versions/2.7/bin/virtualenvwrapper.sh
 
+# Automatically call "workon" if .venv exists.  This is from--
+# http://virtualenvwrapper.readthedocs.org/en/latest/tips.html#automatically-run-workon-when-entering-a-directory
+has_virtualenv() {
+    if [ -e .venv ]; then
+        workon `cat .venv`
+    fi
+}
+venv_cd () {
+    builtin cd "$@" && has_virtualenv
+}
+alias cd="venv_cd"
+
 #-------- virtualenvwrapper (end) -------------#
 
 # Convenience function to set the title of a Terminal tab in Mac OS X.
