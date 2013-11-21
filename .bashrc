@@ -24,8 +24,13 @@ check_virtualenv() {
         workon $env
     fi
 }
+# We wrap "cd" here instead of "builtin cd" because otherwise RVM's
+# auto-activation from .ruby-version no longer worked.
+# TODO: study RVM to figure out why it stopped working.
+# TODO: come up with another way to address the infinite-loop issue
+# raised here: https://github.com/justinabrahms/jlilly-bashy-dotfiles/commit/04899f005397499e89da6d562b062545e70d7975#commitcomment-1526375
 venv_cd () {
-    builtin cd "$@" && check_virtualenv
+    cd "$@" && check_virtualenv
 }
 # Call check_virtualenv in case opening directly into a directory (e.g
 # when opening a new tab in Terminal.app).
