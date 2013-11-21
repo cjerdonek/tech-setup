@@ -15,8 +15,8 @@ export WORKON_HOME=$HOME/Dev/.virtualenvs
 
 source /opt/local/Library/Frameworks/Python.framework/Versions/2.7/bin/virtualenvwrapper.sh
 
-# Automatically call "workon" if .venv exists.  This is from--
-# http://virtualenvwrapper.readthedocs.org/en/latest/tips.html#automatically-run-workon-when-entering-a-directory
+# Call virtualenvwrapper's "workon" if .venv exists.  This is from--
+# https://gist.github.com/cjerdonek/7583644
 check_virtualenv() {
     if [ -e .venv ]; then
         env=`cat .venv`
