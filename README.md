@@ -12,4 +12,9 @@ go to Preferences > Advanced > Folder References, and then change
 
     !.*/(\.git|CVS|_darcs|_MTN|\{arch\}|blib|.*~\.nib|.*\.(framework|app|pbproj|pbxproj|xcode(proj)?|bundle))$
 
+Change "File Pattern"
+
+    from: !(/\.(?!htaccess)[^/]*|\.(tmproj|o|pyc)|/Icon\r|/svn-commit(\.[2-9])?\.tmp)$
+    to:   !(/\.(?!\W*)[^/]*|\.(gitkeep|DS_Store|tmproj|o|pyc)|/Icon\r|/svn-commit(\.[2-9])?\.tmp)$
+
 This suggestion is [from here](https://gist.github.com/chrisyour/728445).
