@@ -17,15 +17,22 @@ source /opt/local/Library/Frameworks/Python.framework/Versions/2.7/bin/virtualen
 
 # Automatically call "workon" if .venv exists.  This is from--
 # http://virtualenvwrapper.readthedocs.org/en/latest/tips.html#automatically-run-workon-when-entering-a-directory
-has_virtualenv() {
+check_virtualenv() {
     if [ -e .venv ]; then
-        workon `cat .venv`
+        env=`cat .venv`
+        echo "Found .venv in directory. Calling: workon ${env}"
+        workon $env
     fi
 }
 venv_cd () {
-    builtin cd "$@" && has_virtualenv
+    builtin cd "$@" && check_virtualenv
 }
-alias cd="venv_cd"
+# Call check_virtualenv in case opening directly into a directory (e.g
+# when opening a new tab in Terminal.app).
+check_virtualenv
+
+# Add the following to ~/.bash_aliases:
+# alias cd="venv_cd"
 
 #-------- virtualenvwrapper (end) -------------#
 
