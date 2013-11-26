@@ -1,0 +1,5 @@
+
+# We do this to avoid the following warning when running virtualenv:
+#  "Warning! PATH is not properly set up, '$HOME/.rvm/gems/ruby-1.9.3-p448/bin' is not at first place,"
+# The suggestion is from here: http://stackoverflow.com/a/19960409
+rvm_silence_path_mismatch_check_flag=1
