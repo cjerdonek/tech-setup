@@ -1,0 +1,10 @@
+[user]
+	name = Chris Jerdonek
+	email = chris.jerdonek@gmail.com
+[color]
+	diff = auto
+	ui = true
+[core]
+	editor = nano
+[push]
+	default = tracking
