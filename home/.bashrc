@@ -3,7 +3,7 @@
 
 export EDITOR=nano
 
-#-------- virtualenvwrapper (start) -----------#
+#------- virtualenvwrapper | start ------------#
 
 # See here for more info:
 # http://virtualenvwrapper.readthedocs.org/en/latest/install.html
@@ -25,10 +25,10 @@ check_virtualenv() {
     fi
 }
 # We wrap "cd" here instead of "builtin cd" because otherwise RVM's
-# auto-activation from .ruby-version no longer worked.
+# auto-activation from .ruby-version stopped working for some reason.
 # TODO: study RVM to figure out why it stopped working.
-# TODO: come up with another way to address the infinite-loop issue
-# raised here: https://github.com/justinabrahms/jlilly-bashy-dotfiles/commit/04899f005397499e89da6d562b062545e70d7975#commitcomment-1526375
+# TODO: come up with a way to address the infinite-loop issue different from:
+#   https://github.com/justinabrahms/jlilly-bashy-dotfiles/commit/04899f005397499e89da6d562b062545e70d7975#commitcomment-1526375
 venv_cd () {
     cd "$@" && check_virtualenv
 }
@@ -39,7 +39,7 @@ check_virtualenv
 # Add the following to ~/.bash_aliases:
 # alias cd="venv_cd"
 
-#-------- virtualenvwrapper (end) -------------#
+#------- virtualenvwrapper | end --------------#
 
 # Convenience function to set the title of a Terminal tab in Mac OS X.
 # See: http://www.devdaily.com/blog/post/mac-os-x/change-title-bar-of-mac-os-x-terminal-window
