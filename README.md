@@ -27,4 +27,10 @@ This suggestion is [from here](https://gist.github.com/chrisyour/728445).
 
 ### Django bundle
 
-Follow [these instructions](https://code.djangoproject.com/wiki/TextMate).
+Follow [these instructions](https://code.djangoproject.com/wiki/TextMate):
+
+    $ cd ~/Library/Application\ Support/TextMate/Bundles
+    $ git clone https://github.com/textmate/python-django.tmbundle.git
+    $ git clone https://github.com/textmate/python-django-templates.tmbundle.git
+
+Then go to Bundles > Bundle Editor > Reload Bundles.
