@@ -1,0 +1,9 @@
+## Mac OS X
+
+.DS_Store
+
+## Python
+
+# For info on what .venv is for, see this gist:
+# https://gist.github.com/cjerdonek/7583644
+.venv

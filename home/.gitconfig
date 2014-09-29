@@ -6,5 +6,6 @@
 	ui = true
 [core]
 	editor = nano
+	excludesfile = ~/.gitignore
 [push]
 	default = tracking
