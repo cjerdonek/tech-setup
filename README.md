@@ -3,6 +3,16 @@ tech-setup
 
 Miscellaneous environment setup
 
+
+Symbolic Links
+--------------
+
+Here are some useful symbolic links to create:
+
+    TODO
+    ln -s existing_file new_file
+
+
 TextMate
 --------
 
