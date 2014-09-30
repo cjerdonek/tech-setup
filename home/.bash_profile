@@ -8,8 +8,14 @@ oldpath=$PATH
 # are installed (e.g. rabbitmqctl).
 PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
-# Make sure our installed PostgreSQL is used in place of Apple's.
+# Make sure our installed PostgreSQL is used instead of Apple's.
 PATH=/Library/PostgreSQL/9.3/bin:$PATH
+
+# Make sure our manually installed git is used instead of Apple's.
+# The Mac OS X git installer from http://git-scm.com/ installs git in
+# /usr/local/git/bin.  The older Apple version is located in /usr/local/bin.
+PATH=/usr/local/git/bin:$PATH
+
 export PATH
 
 #------- PATH | end ---------------------------#
