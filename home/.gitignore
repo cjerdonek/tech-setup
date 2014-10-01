@@ -2,6 +2,10 @@
 
 .DS_Store
 
+## Textmate
+
+*.tmproj
+
 ## Python
 
 # For info on what .venv is for, see this gist:
